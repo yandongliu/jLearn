@@ -4,7 +4,7 @@ Java Machine Learning package
 #Algorithms
 
   * Non-negative matrix factorization
-  usage: java learning.mf.NMF /Users/yandong/dev/ml/ml-1m/ratings.dat 
+     * usage: java learning.mf.NMF movielength_data
   * Logistic Regression 
   * Linear Regression
   * Decision Tree
