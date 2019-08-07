@@ -70,14 +70,15 @@ public class NMF {
             M.numUsers = M.numUsers;
             M.P = new double[numUsers][M.rank];
             M.Q = new double[numItems][M.rank];
+			Random r = new Random();
             for(int i=0;i<numUsers;i++) {
                 for (int j = 0; j < M.rank; j++) {
-                    M.P[i][j] = 0.1;
+                    M.P[i][j] = r.nextDouble();
                 }
             }
             for(int i=0;i<numItems;i++) {
                 for (int j = 0; j < M.rank; j++) {
-                    M.Q[i][j] = 0.1;
+                    M.Q[i][j] = r.nextDouble();
                 }
             }
             System.out.println("#users:"+numUsers+" #items:"+numItems);
@@ -166,7 +167,7 @@ public class NMF {
     public static void main(String[] args) {
         NMF nmf = new NMF(20);
         if (args.length < 1)
-            nmf.loadMatrixFromMovielens("/Users/yandong/dev/ml/ml-1m/ratings.dat");
+            nmf.loadMatrixFromMovielens("/Users/yandongliu/work/2019_aug_jam/ml-1m/ratings.dat");
         else
             nmf.loadMatrixFromMovielens(args[0]);
         System.out.println("loaded");
